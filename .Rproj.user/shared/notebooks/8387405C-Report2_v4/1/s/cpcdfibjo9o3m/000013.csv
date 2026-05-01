@@ -1,0 +1,2 @@
+"0","auc_val <- auc(roc_obj)"
+"0","legend(""bottomright"", legend = paste0(""AUC = "", round(auc_val, 3)), bty = ""n"")"

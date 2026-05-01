@@ -1,0 +1,8 @@
+"0","lure_bins %>%"
+"0","  ggplot(aes(x = factor(lure_bin), y = p_similar, fill = group)) +"
+"0","  geom_boxplot(alpha=0.7, outlier.shape = NA) +"
+"0","  geom_jitter(aes(color=group), width=0.2, alpha=0.3) +"
+"0","  scale_fill_manual(values = clr, labels = lbl) +"
+"0","  scale_color_manual(values = clr, labels = lbl) +"
+"0","  labs(x = ""Lure Similarity Bin (1 = Most Similar)"", y = ""P('Similar'|Lure)"") +"
+"0","  theme_report"

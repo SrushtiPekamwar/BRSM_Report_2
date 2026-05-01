@@ -1,0 +1,6 @@
+"0","# Fit GLMM for target trials (already computed as glmm_mod)"
+"0","prob <- predict(glmm_mod, type = ""response"")"
+"0","roc_obj <- roc(test_targets$accuracy, prob)"
+"0",""
+"0","# Plot ROC"
+"0","plot(roc_obj, col = ""#1b9e77"", lwd = 2, main = ""GLMM Target ROC Curve"")"
