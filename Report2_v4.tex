@@ -96,7 +96,7 @@
 \makeatother
 \subtitle{BRSM 2026 - Report 2: Advanced Inferential Analysis}
 \author{Team Simpletons: Srushti Pekamwar, Param Modi, Anurag Kaushal}
-\date{April 19, 2026}
+\date{April 25, 2026}
 
 \begin{document}
 \maketitle
@@ -104,29 +104,19 @@
 \setstretch{1}
 \section{Introduction and Background}\label{introduction-and-background}
 
-Human experience is not a continuous stream. Instead, the brain
-automatically segments ongoing perceptual representations into discrete
-events to optimize structural encoding and situational awareness. An
-event boundary occurs whenever the perceptual or situational context
-changes, such as moving between rooms, experiencing a temporal shift,
-or witnessing a scene change in a visual narrative (Zacks, Speer,
-Swallow, Braver, \& Reynolds, 2007). Event Segmentation Theory
-suggests that these event boundaries trigger a cognitive update in working
-memory, briefly impairing the encoding fidelity of incoming stimuli
-immediately post-boundary (Swallow, Zacks, \& Abrams, 2009).
+Human experiences are not in a continuous stream, instead the brain automatically segments the ongoing perceptual changes into discrete events to optimize this structural encoding and the situational awareness. Event boundaries occur whenever there is a perceptual or situational change like moving between the rooms or say experiencing a temporal shift or a scene change in a visual manner (Zacks, Speer, Swallow, Braver, & Reynolds, 2007). Event segmentation theory suggests that these event boundaries trigger a cognitive update in working memory, which briefly impairs the encoding accuracy for the stimuli immediately after post-boundary (Swallow, Zacks, & Abrams, 2009).
 
 
 \subsection{Summary of Initial Insights (Report
 1)}\label{summary-of-initial-insights-report-1}
 
-Human experience is naturally divided into discrete events, and prior research shows that event boundaries play an important role in shaping memory. Studies have found that recognition is weaker for items presented immediately after a boundary, suggesting a disruption at points of contextual change.
+Human experiences are naturally divided into discrete events and the prior research in this field shows that event boundaries do play an important role in shaping the memory. Studies have also found the recognition for the items after the boundary are weaker than the middle items which suggests that there is disruption at points which have some perceptual or contextual change. 
 
-Using the Mnemonic Similarity Task (MST), we analyzed data from 160 participants across three cognitive load conditions (Item Only, Task Only, Both). The MST measures recognition (REC) and mnemonic discrimination (LDI) using targets, lures, and foils.
+We have analysed the data from 160 participants across three different cognitive load conditions (Item Only, Task Only, Both) using the Mnemonic Similarity Task (MST). MST measures recognition (REC) and mnemonic discrimination (LDI) using targets, lures, and foils. 
 
-This study examines how event boundaries, cognitive load, and perceptual similarity affect memory performance. It also shows how boundaries can disrupt recognition, how similar information can lead to errors, and how the effort involved in encoding affects memory formation.
+This study examines how the memory performance is affected by event boundaries based on cognitive load and perceptual similarity. It also shows how these event boundaries can disrupt the recognition and also how the similar information can lead to error and it also shows how the effort required during encoding affects the memory formation.
 
-\subsection{Extension of Experimental Parameters (Report
-2)}\label{extension-of-experimental-parameters-report-2}
+\subsection{Hypotheses for Report 2}\label{Hypotheses-for-Report-2}
 
 We focus our analysis on four specific hypotheses:
 
@@ -145,19 +135,17 @@ We focus our analysis on four specific hypotheses:
 \textbf{H4: Encoding Update Cost:} Reaction time is expected to increase immediately following an event boundary, reflecting the cognitive cost of updating the active event model.
 \end{itemize}
 
-By adopting these advanced, trial-level models, we can systematically map memory decay while rigorously accounting for individual variability.
-
 \section{Methods}
 
 \subsection{Experimental Design}
 
-The study included 160 participants (final analysis $n = 159$) assigned to one of three groups based on the encoding task performed. The Item Only group ($n = 56$) indicated whether each object was indoor/outdoor. The Task Only group ($n = 53$) performed a categorisation task (e.g., ``Does it fit in a shoebox?''). The Both Item \& Task group ($n = 50$) performed both tasks simultaneously.
+Our study included 160 participants (final analysis was only on $n = 159$) and these participants were assigned to one of the three groups based on the encoding tasks performed by them. The item only group ($n = 56$) answered whether each object was indoor/outdorr. The task only group ($n = 53$) answered whether the object will fit in a shoebox and the both item \& task group ($n = 50$) performed both of these tasks simultaneously.
 
-During encoding, participants viewed 280 images in 40 blocks of 7 items, with a scene change and task shift at each block transition serving as the event boundary. Items were classified by position: post-boundary (Position 1), mid-event (Position 4, baseline), and pre-boundary (Position 7). During the subsequent test phase, participants classified 150 images as targets, lures (across five similarity bins, Bin 1 = most similar), and foils, as ``Old'', ``Similar'', or ``New''.
+During the encoding phase the participants viewed 280 images in 40 blocks of 7 items each, in that they had a scene change or task shift or both at each block’s transition which acted as event boundary. The items were classified by the position like position 1 (post-boundary item), position 4 (mid item, baseline), position 7 (pre-boundary item). During the MST or the test phase the participants were shown 150 images as targets, lures (across five similarity bins, Bin 1 = most similar), and foils as ``Old'', ``Similar'', or ``New'' respectively.
 
 \subsection{Variables Computed}
 
-Two bias-corrected memory indices were computed per participant at each boundary position:
+Bias-corrected memory indices taht were computed per participant at each boundary position are as follows:
 
 \[
 \text{REC} = P(\text{``Old''} \mid \text{Target}) - P(\text{``Old''} \mid \text{Foil})
@@ -166,25 +154,26 @@ Two bias-corrected memory indices were computed per participant at each boundary
 \text{LDI} = P(\text{``Similar''} \mid \text{Lure}) - P(\text{``Similar''} \mid \text{Foil})
 \]
 
-REC captures recognition accuracy; LDI captures pattern separation ability. Subtracting the foil false-alarm rate corrects for individual response bias, a participant who responds ``Old'' to everything achieves a high hit rate but zero genuine discrimination. This subtraction ensures that both metrics reflect true memory rather than response tendency. Retrieval reaction time (RT) was also recorded for each test trial.
+REC captures the recognition accuracy meaning if the participant is able to discriminate between New and the Old images and LDI captures pattern separation ability meaning if the participant is able to distinguish between Similar (Lures) or New images. We have subtracted P(Old) so as to remove the bias for those participants who responds Old for every image. Along with this Retrieval reaction time (RT) was also recorded for each test trial.
 
 \subsection{Statistical Analysis}
 
-All analyses were conducted in R using appropriate statistical modeling packages. Because the dataset contains repeated measures nested within participants, multiple analytical approaches were applied:
+All analyses were conducted in R using appropriate statistical modeling packages.
+\\\
 
 \begin{itemize}
 
 \item \textbf{Linear Mixed-Effects Model (H1):}
-A linear mixed-effects model (LMM) with Boundary Position (within-subjects factor with three levels: Pre, Mid, Post) as a fixed effect and participant as a random intercept was used to test the main effect on Recognition Accuracy (REC). Type III ANOVA was used for the omnibus test, followed by planned contrasts.
+In LMM we have considered Boundary Position (within-subjects factor with three levels: Pre, Mid, Post) as a fixed effect and participant was random intercept and we used it to test the main effect on REC. A Type III ANOVA was used to test for overall differences, followed by planned comparisons.
 
 \item \textbf{Mixed ANOVA (H2):}
-A 3 × 3 mixed ANOVA was used to examine the interaction between Task Group (between-subjects factor) and Boundary Position (within-subjects factor). This allowed us to test whether the effect of event boundaries on memory performance varies across levels of cognitive load.
+We used 3 x 3 mixed ANOVA to examine interaction between Task group (between-subjects factor) and Boundary position (within-subjects factor). This type of comparison allowed us to test whether there was an effect of the event boundaries on the memory performance across different levels of cognitive load. 
 
-\item \textbf{GLMM — Logistic Regression (H3):}
-A Generalized Linear Mixed Model (GLMM) with a logistic link was fitted using \texttt{lme4::glmer}, with lure similarity (\texttt{lure\_bin}) and task group as fixed effects, participant as a random intercept, and trial-level accuracy as the outcome. This tested whether perceptual similarity and cognitive load influence discrimination performance.
+\item \textbf{GLMM - Logistic Regression (H3):}
+GLMM was used with logistic link function. Lure similarity and task group was used as fixed effecrs, participant as a random intercept and trial-level accuracy was used as the outcome. This tested whether perceptual similarity and the cognitive load influences discrimination performance.
 
 \item \textbf{Linear Mixed-Effects Model (H4):}
-Reaction time (RT) during encoding was analysed using an LMM with boundary position (Pre, Mid, Post) as a fixed effect and participant as a random intercept, followed by planned contrasts to isolate the post-boundary RT cost.
+We used LMM with boundary position (Pre, Mid, Post) as fixed effects and participants as a random intercept to analyse the reaction time during the encoding phase. This was followed by planned comparisons to measure the change in reaction time at post-boundary location.
 
 \end{itemize}
 
@@ -192,7 +181,7 @@ Reaction time (RT) during encoding was analysed using an LMM with boundary posit
 \section{Data Integration and Validation Diagnostics}
 \label{data-integration-and-validation-diagnostics}
 
-Prior to conducting the main analyses, preliminary checks were performed to ensure data quality, stability, and consistency across conditions. Figure \ref{fig:validations} presents key descriptive distributions used to validate the dataset.
+Before conducting the main analyses, we performed some preliminary checks to ensure data quality and consistency across different conditions. In figure \ref{fig:validations} we present key descriptive distributions used to validate the dataset.
 
 \begin{figure}[H]
 \centering
@@ -200,15 +189,15 @@ Prior to conducting the main analyses, preliminary checks were performed to ensu
 \caption{\label{fig:validations} Benchmark distributions illustrating data structure. Left: Violin plots of Recognition Memory (REC) across task groups. Right: Line plots showing the relationship between lure similarity (Lure Bin) and the probability of responding “similar” to lure items.}
 \end{figure}
 
-The violin plots (left panel) show that overall recognition performance is relatively consistent across groups, with moderate variability and slight skewness typical of behavioural data. No extreme outliers or irregular distributions are observed, indicating that the dataset is suitable for further statistical analysis.
+The left panel's violin plot shows that the overall REC performance is relatively consistent across three groups. There were no extreme outliers or irregular distributions which indicated that the dataset is suitable for further statistical analysis.
 
-The lure discrimination curves (right panel) display a clear increasing trend across lure bins, where Bin 1 represents highly similar lures (very close to the original “old” items) and Bin 5 represents less similar lures (more distinct from the original items). As the bin number increases, the probability of correctly identifying a lure as “similar” also increases. This pattern is consistent across all groups and aligns with theoretical expectations, as highly similar lures (Bin 1) are more difficult to distinguish from previously seen items, whereas less similar lures (Bin 5) are easier to correctly classify.
+In the right panel we can see the lure discrimination curves which displays a clear increasing trend across all 5 lure bins, here Bin 1 is representing highly similar lures which are very close to the Old items and Bin 5 represents, less similar lures means which are more distincet from the original items. From the figure we can see that as the bin number increases the probability of the participant correctly identifying lure bin as "similar" also increases. This pattern is consistent across all the groups.
 
-Overall, these patterns confirm that the dataset exhibits stable and interpretable structure, providing a reliable foundation for subsequent inferential modelling.
+From the analysis we can confirm that the dataset exhibits stable and interpretable structure which can we used as a reliable source for our subsequent inferential modelling.
 
 \section{Results: Boundary Disruption Effect (H1)}
 
-To test whether event boundaries disrupt recognition memory, we fitted a linear mixed-effects model with boundary position as a fixed effect and participant as a random intercept, then evaluated the effect using Type III ANOVA and planned contrasts.
+To test whether event boundaries disrupt recognition memory, we used LMM and we have considered Boundary Position (within-subjects factor with three levels: Pre, Mid, Post) as a fixed effect and participant was random intercept and we used it to test the main effect on REC. A Type III ANOVA was used to test for overall differences, followed by planned comparisons.
 
 \textbf{Hypothesis (H1):} Recognition accuracy remains stable within events (Pre $\approx$ Mid) but drops after a boundary (Post), reflecting a boundary-induced disruption in memory performance.
 
@@ -224,7 +213,7 @@ Boundary Position & 2 & 318 & 16.13 & \textbf{< .001} \\
 \end{tabular}
 \end{table}
 
-A highly significant main effect of boundary position was observed for REC ($F(2, 318) = 16.13$, $p < .001$). Post-boundary accuracy was significantly lower than mid-event accuracy ($t = -4.93$, $p < .001$), confirming a boundary-related disruption in recognition performance.
+A highly significant main effect of boundary position was observed for REC ($F(2, 318) = 16.13$, $p < .001$). Post-boundary accuracy was significantly lower than mid-event accuracy ($t = -4.93$, $p < .001$) which confirms that there is a boundary-related disruption in recognition performance.
 
 \begin{table}[H]
 \centering
@@ -240,19 +229,19 @@ Pre vs Mid  & $0.62$  & $.535$ \\
 \end{tabular}
 \end{table}
 
-Planned contrasts confirmed that the post-boundary position was significantly lower than both the mid-event ($t = -4.93$, $p < .001$) and pre-boundary ($t = -3.79$, $p < .001$) positions. Pre and mid did not reliably differ ($t = 0.62$, $p = .535$), indicating that the disruption is localised to the moment of contextual transition. Descriptively, mean REC was $M_{\text{pre}} = 0.665$ ($SD = 0.181$), $M_{\text{mid}} = 0.665$ ($SD = 0.187$), and $M_{\text{post}} = 0.594$ ($SD = 0.205$).
+Planned contrasts which were performed confirmed that the post-boundary position was significantly lower than both the mid-event ($t = -4.93$, $p < .001$) and pre-boundary ($t = -3.79$, $p < .001$) positions. Pre and mid did not reliably differ ($t = 0.62$, $p = .535$), indicating that the disruption is localised to the moment of contextual transition. Descriptively, mean REC was $M_{\text{pre}} = 0.665$ ($SD = 0.181$), $M_{\text{mid}} = 0.665$ ($SD = 0.187$), and $M_{\text{post}} = 0.594$ ($SD = 0.205$).
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\linewidth]{fig_h1_boundary-1}
+\includegraphics[width=0.6\linewidth]{fig_h1_gradient-1}
 \caption{\label{fig:rec_gradient} H1 Result: Recognition accuracy by boundary position. Error bars represent ±1 SE.}
 \end{figure}
 
-\textbf{Verdict: Supported.} Recognition accuracy is stable within events but drops sharply after the boundary, confirming a boundary-induced disruption in memory performance.
+\textbf{Verdict: Supported} From the above analysis we can conclude that Recognition accuracy is stable within events but it drops sharply after the boundary and this confirms that there certainly is a disruption in the memory performance which is induced by the boundary.
 
 \section{Results: Cognitive Load Effect (H2)}
 
-To examine how cognitive load influences recognition memory, a $3 \times 3$ mixed-effects ANOVA was conducted with Task Group (between-subjects) and Boundary Position (within-subjects) as factors.
+To examine how the cognitive load influences recognition memory we used 3 x 3 mixed ANOVA to examine interaction between Task group (between-subjects factor) and Boundary position (within-subjects factor). This type of comparison allowed us to test whether there was an effect of the event boundaries on the memory performance across different levels of cognitive load.
 
 \textbf{Hypothesis (H2):} Recognition accuracy is expected to differ across task conditions, with higher cognitive load leading to lower overall performance compared to lower load conditions.
 
@@ -267,21 +256,21 @@ boundary\_position:group & 0.123 & 0.031 & 4 & 314 & 1.859 & 0.1174 \\
 \bottomrule
 \end{longtable}
 
-The ANOVA revealed a significant main effect of task group ($F(2, 157) = 4.433$, $p = 0.013$), confirming that recognition accuracy differs across cognitive load conditions. Participants in higher-load task groups demonstrated lower overall recognition performance compared to those in the baseline Item Only condition.
+The ANOVA revealed a significant main effect of task group ($F(2, 157) = 4.433$, $p = 0.013$), which confimed that recognition accuracy differs across cognitive load conditions. It also revealed that the participants which were given higher-load task they demonstrated lower overall recognition performance compared to the participants which were in the baseline Item Only condition.
 
-The main effect of boundary position was also significant ($F(2, 314) = 16.303$, $p < .001$), consistent with H1. However, the interaction between group and boundary position was not statistically significant ($F(4, 314) = 1.859$, $p = 0.117$), indicating that while cognitive load affects overall accuracy, it does not differentially amplify the boundary-related decline.
+The main effect of boundary position was also significant ($F(2, 314) = 16.303$, $p < .001$), consistent with H1. But, the interaction between group and boundary position was not statistically significant ($F(4, 314) = 1.859$, $p = 0.117$), which indicates that even if the cognitive load affects the overall accuracy but it does not amplify the boundary related decline like more decline in Both group than the Item group.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\linewidth]{fig_h2_interaction-1}
+\includegraphics[width=0.6\linewidth]{fig_interaction_map-1}
 \caption{\label{fig:interact} H2 Result: Cognitive Load × Boundary Position interaction. Higher load reduces overall accuracy, but the boundary disruption pattern is similar across groups.}
 \end{figure}
 
-As shown in Figure \ref{fig:interact}, the Task Only and Both conditions exhibit consistently lower recognition accuracy compared to the Item Only group. This demonstrates that the cognitive demands imposed by more complex encoding tasks reduce memory performance broadly, supporting the Cognitive Load Effect.
+As shown in Figure \ref{fig:interact}, the Task Only and Both conditions are exhibiting consistently lower recognition accuracy compared to the Item Only group. This shows that cognitive demands which are due to more complex encoding tasks reduces the memory performance, this is supporting our cognitive load effect.
 
-\textbf{Verdict: Supported.} Higher cognitive load significantly reduces overall recognition accuracy.
+\textbf{Verdict: Supported} Higher cognitive load significantly reduces overall recognition accuracy.
 
-Since the main effect of Task Group was statistically significant, Bonferroni-corrected post-hoc pairwise comparisons were conducted to identify which specific groups differed in overall recognition accuracy.
+Since the main effect for the Task group was statistically significant so Bonferroni-corrected post-hoc pairwise comparisons were conducted so as to identify which specific groups differed in the overall recognition accuracy.
 
 \begin{longtable}[]{@{}lcc@{}}
 \caption{Bonferroni-corrected post-hoc pairwise comparisons for Task Group main effect on REC (H2).}\tabularnewline
@@ -294,11 +283,11 @@ Task Only vs Both Item \& Task & $-$0.045 & 0.430 \\
 \bottomrule
 \end{longtable}
 
-\textbf{Post-hoc Result:} Item Only participants ($M = 0.685$, $SD = 0.147$) significantly outperformed Task Only participants ($M = 0.596$, $SD = 0.174$; $\Delta M = 0.089$, $d = 0.55$, $p_{\text{Bonf}} = 0.010$), representing a medium-sized cognitive load effect. The comparisons between Item Only and Both Item \& Task ($p_{\text{Bonf}} = 0.441$) and between Task Only and Both Item \& Task ($p_{\text{Bonf}} = 0.430$) did not reach statistical significance after correction. This pattern confirms that higher cognitive load leads to lower overall recognition accuracy, with the most pronounced cost observed in the Task Only condition.
+\textbf{Post-hoc Result:} Item Only participants ($M = 0.685$, $SD = 0.147$) significantly outperformed Task Only participants ($M = 0.596$, $SD = 0.174$; $\Delta M = 0.089$, $d = 0.55$, $p_{\text{Bonf}} = 0.010$), which represents a medium-sized cognitive load effect. The comparisons between Item Only and Both Item \& Task ($p_{\text{Bonf}} = 0.441$) and between Task Only and Both Item \& Task ($p_{\text{Bonf}} = 0.430$) did not reach any statistical significance after correction. The above values confirms that higher cognitive loads is leading to lower overall recognition accuracy.
 
 \section{Results: Doppelgänger Effect (H3)}
 
-To examine how perceptual similarity influences memory performance, a GLMM with a logistic link was applied to trial-level lure data, with lure similarity (\texttt{lure\_bin}) and task group as fixed effects and participant as a random intercept.
+To examine how perceptual similarity influences memory performance, GLMM was used with logistic link function. Lure similarity and task group was used as fixed effecrs, participant as a random intercept and trial-level accuracy was used as the outcome. This tested whether perceptual similarity and the cognitive load influences discrimination performance.
 
 \textbf{Hypothesis (H3):} Highly similar lure items (Bin 1) are expected to be more difficult to distinguish from target items than less similar lures (Bin 5), resulting in lower discrimination accuracy.
 
@@ -326,29 +315,29 @@ lure\_bin:Both & -0.056 & 0.052 & -1.08 & 0.282 \\
 
 \end{longtable}
 
-\textbf{Result (Supported):} The analysis revealed a strong effect of lure similarity on memory performance ($\beta = 0.196$, $p < 0.001$). Specifically, participants were much more likely to correctly identify a lure as ``similar'' when it was less visually similar to the original item. In contrast, highly similar lures (Bin 1) were frequently mistaken for previously seen items, leading to lower discrimination accuracy.
+\textbf{Result (Supported):} The above analysis revealed that there is a strong effect of lure similarity on memory performance ($\beta = 0.196$, $p < 0.001$). Like, participants correctly identified lure item as similar when it was less visually similar to the original item and in contrast to this the participants frequently mistook highly similar bins (Bin 1) as old item, which lead to lower discrimination accuracy.
 
-Importantly, this pattern was consistent across all task groups. There were no significant differences between groups, and no reliable interaction between lure similarity and task condition. This indicates that the effect of similarity on memory errors operates independently of cognitive load.
+This pattern was consistent across all task groups. We did not find any significant differences between the groups and there was no reliable interaction between lure similarity and the task condition. This indicated that the effect of similarity on memory is independent of the cognitive load.
 
 This pattern is visualized in Figure \ref{fig:lure_fit}, which shows a monotonic increase in accuracy across similarity bins.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\linewidth]{fig_h3_lure-1}
+\includegraphics[width=0.6\linewidth]{fig_lure_fit-1}
 \caption{\label{fig:lure_fit} H3 Result: Lure discrimination by similarity bin. Less similar lures (higher bin numbers) are identified more accurately across all groups.}
 \end{figure}
 
-\textbf{Verdict: Supported.} Perceptual similarity is a robust and consistent driver of memory errors, independent of task demands.
+\textbf{Verdict: Supported} From above analysis we can conclude that perceptual similarity is a robust and consistent driver of memory errors, independent of task demands.
 
 \section{Results: Encoding Update Cost (H4)}
 
-To assess the cognitive cost of event model updating during encoding, we examined reaction times across the three boundary-defined positions (Post, Mid, Pre) within each event sequence using a Linear Mixed-Effects Model (LMM) with participant as a random intercept.
+To analyse the cognitive cost of updating the event model during the encoding we used LMM with boundary position (Pre, Mid, Post) as fixed effects and participants as a random intercept to analyse the reaction time during the encoding phase. This was followed by planned comparisons to measure the change in reaction time at post-boundary location.
 
 \textbf{Hypothesis (H4):} Reaction time is expected to increase immediately following an event boundary, reflecting the cognitive cost of updating the active event model.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\linewidth]{fig_h4_encoding_rt-1}
+\includegraphics[width=0.6\linewidth]{fig_encoding_rt_gradient-1}
 \caption{\label{fig:enc_rt_gradient} H4 Result: Encoding reaction time by boundary position. RT spikes immediately after boundaries, indicating processing cost of context updating.}
 \end{figure}
 
@@ -366,38 +355,37 @@ Mid vs Post & $-$0.138 & 0.019 & $-$7.31 & \textbf{< .001} \\
 \end{tabular}
 \end{table}
 
-\textbf{Result (Supported):} Encoding reaction time was highest at the post-boundary position, the first item following each event boundary. Both pre-boundary and mid-event positions showed significantly lower RT (Pre vs Post: $t = -7.84$, $p < .001$; Mid vs Post: $t = -7.31$, $p < .001$), confirming that the cognitive cost of updating the active event model is concentrated at the boundary and diminishes as the event representation stabilises. \textbf{Verdict: Supported.}
+\textbf{Result (Supported):} From above analysis we can see that the encoding reaction time was highest at the post-boundary position. Both pre-boundary and mid-event positions showed significantly lower RT (Pre vs Post: $t = -7.84$, $p < .001$; Mid vs Post: $t = -7.31$, $p < .001$), which confirms that the cognitive cost of updating the active event model is more at the boundary and reduces or vanishes as the event representation stabilises. 
 
 \section{Discussion and Phenomenological Constraints}
 \label{discussion-and-phenomenological-constraints}
 
-The primary objective of Report 2 was to extend the descriptive findings of Report 1 using more rigorous statistical modeling. By applying linear mixed-effects models, mixed ANOVA, and a trial-level GLMM, we aimed to precisely characterize how event boundaries and perceptual similarity influence memory performance in the Mnemonic Similarity Task.
+The objective of Report 2 was to extend our findings from Report 1 using rigorous statistical models. We applied LMM, Mixed ANOVA, GLMM to understand how the event boundaries and perceptual similarity influences the memory performance in the MST.
 
 \subsection{Resolution of Targeted Hypotheses}
 
-The combined analyses provide a coherent account of how memory is structured around event boundaries:
-
 \begin{enumerate}
 \item
-\textbf{Boundary Disruption Effect (H1) — Supported:}
-A linear mixed-effects model revealed a significant main effect of boundary position on REC ($F(2, 318) = 16.13$, $p < .001$). Planned contrasts confirmed that post-boundary accuracy was significantly lower than mid-event accuracy ($t = -4.93$, $p < .001$) and pre-boundary accuracy ($t = -3.79$, $p < .001$), while pre and mid did not differ, demonstrating that disruption is localised to the contextual transition.
+\textbf{Boundary Disruption Effect (H1) - Supported:}
+LMM model which we used revealed that there is a statistically significant main effect of the boundary position on the REC ($F(2, 318) = 16.13$, $p < .001$). The planned contrasts which were performed confirmed that the post-boundary accuracy was significantly lower than the mid-event accuracy ($t = -4.93$, $p < .001$) and pre-boundary accuracy ($t = -3.79$, $p < .001$). Also mid and pre did not differ statistically which shows that this disruption is localised at the transition.
 
 \item
-\textbf{Cognitive Load Effect (H2) — Supported:}
-A significant main effect of task group ($F(2, 157) = 4.433$, $p = 0.013$) confirms that higher cognitive load reduces overall recognition accuracy. Participants in more demanding task conditions performed worse than those in the Item Only baseline.
+\textbf{Cognitive Load Effect (H2) - Supported:}
+The analysis which we performed showed that there was a significant effect of task group ($F(2, 157) = 4.433$, $p = 0.013$) which confirmed that if there is higher cognitive load then it reduces the overall REC, so the participants in the more demanding task conditions performed worse than those in the Item only group.
+
 
 \item
-\textbf{Doppelgänger Effect (H3) — Supported:}
-A strong and highly significant effect of lure similarity ($\beta = 0.196$, $p < 0.001$) demonstrates that perceptual overlap is a primary driver of memory errors. This effect was consistent across all task groups, indicating that similarity-driven interference operates independently of cognitive load.
+\textbf{Doppelgänger Effect (H3) - Supported:}
+We found a strong and highly significant effect of lure similarity ($\beta = 0.196$, $p < 0.001$) which shows that perceptual change is a primary driver for the memory error. This effect was consistent across all the task groups, which indicates that this effect operated independently of the cognitive load.
 
 \item
-\textbf{Encoding Update Cost (H4) — Supported:}
-Encoding reaction time was highest at the post-boundary position, with pre-boundary and mid-event positions showing significantly lower RT ($p < .001$ for both). This confirms that the cognitive cost of updating the active event model is concentrated at the boundary.
+\textbf{Encoding Update Cost (H4) - Supported:}
+Analysis revealed that encoding reaction time was highest at the post-boundary position,   while pre and mid event positions showed significantly lower reaction times ($p < .001$ for both). This confirmed that the cognitive cost of updating an active event model is concentrated at the boundary.
 \end{enumerate}
 
 \subsection{Theoretical Implications}
 
-These findings align closely with Event Segmentation Theory (Zacks et al., 2007), which proposes that perceptual systems partition continuous experience into discrete events. The observed post-boundary decline supports the idea that memory updating at event transitions temporarily disrupts encoding processes.
+Above findings aligns closely with the Event Segmentation Theory given by Zacks et al., 2007, in which they proposed that the perceptual systems partitions our continuous experiences into discrete events. Our finding of decline at the post-boundary supports the idea that the memory updating at the event transitions indeed temporarily disrupts the encoding process.
 
 Crucially, the results indicate that this disruption is:
 \begin{itemize}
@@ -411,9 +399,9 @@ This suggests that boundary-related memory disruption and similarity-based inter
 
 \subsection{Constraints and Future Directions}
 
-Several limitations should be noted. First, the use of discrete boundary positions (Pre, Mid, Post) simplifies what is likely a continuous encoding process. Second, the reliance on binary response models (correct vs incorrect) may obscure more nuanced memory dynamics. Finally, the absence of neural measures limits direct interpretation of underlying cognitive mechanisms.
+There are several limitations which should be noted. First thing is we used discrete boundary positions (Pre, Mid, Post) which simplifies our continuous encoding process. Second is that binary response of the models (correct vs incorrect) may obscure the nuances of the memory dynamics. Finally there was no neural measures which limits our direct interpretation of the underlying cognitive mechanisms. 
 
-Future work could extend these findings by incorporating continuous-time modeling, neuroimaging data, or adaptive boundary manipulations to better isolate the mechanisms of boundary-driven memory disruption.
+In the future work we could extent our findings by changing the data collections like incorporating continuous time-modelling, neural data.
 
 \subsection{Overall Hypothesis Summary}
 
@@ -434,38 +422,25 @@ Encoding Update Cost (H4) & RT is highest at the post-boundary position during e
 
 \section{Conclusion}\label{conclusion}
 
-This sequence of statistical analyses extends the descriptive findings from Report 1 by providing a more precise and statistically grounded understanding of how event boundaries and perceptual similarity influence memory performance in the Mnemonic Similarity Task.
+The above statistical analyses which we performed extends our descriptive findings of Report 1, as this report provides a more precise and statistically grounded understanding of how the event boundaries and the perceptual similarities influences memory performance in MST.
 
-The \textbf{Boundary Disruption Effect (H1)} was supported. A linear mixed-effects model with Type III ANOVA confirmed a significant main effect of boundary position on recognition accuracy ($F(2, 318) = 16.13$, $p < .001$). Planned contrasts showed that post-boundary accuracy was significantly lower than mid-event accuracy ($t = -4.93$, $p < .001$) and pre-boundary accuracy ($t = -3.79$, $p < .001$), while pre and mid did not differ. This confirms that memory disruption is localised to the moment of contextual transition.
+The \textbf{Boundary Disruption Effect (H1)} was supported. Analysis confirmed that there was a significant main effect of boundary position on recognition accuracy. Further planned contrasts showed that post-boundary position was significantly lower than the mid-event accuracy. Also pre and mid did not differ statistically. This confirms that memory disruption is localised where there is contextual transition.
 
-The \textbf{Cognitive Load Effect (H2)} was supported. A significant main effect of task group ($F(2, 157) = 4.433$, $p = 0.013$) confirmed that participants in higher-load conditions exhibited lower overall recognition accuracy. Post-hoc comparisons showed that the Item Only vs Task Only contrast reached significance ($\Delta M = 0.089$, $d = 0.55$, $p_{\text{Bonf}} = 0.010$), with the Both Item \& Task group showing intermediate performance. The interaction between boundary position and cognitive load was not significant ($p = 0.117$), indicating that while cognitive load reduces memory globally, the boundary disruption pattern is consistent across all groups.
+The \textbf{Cognitive Load Effect (H2)} was supported. Analysis revealed a significant main effect of task group which confirmed that participants which were in higher-load conditions showcased lower overall recognition accuracy. Post-hoc comparisons which were done showed that Item only vs Task only reached statistical significance while the Both Item \& Task group showing intermediate performance. The interaction between boundary position and cognitive load was not significant which indicated that while cognitive load reduces memory globally but the boundary disruption pattern is consistent across all groups.
 
-The \textbf{Doppelgänger Effect (H3)} revealed that perceptual similarity is a robust driver of memory errors ($\beta = 0.196$, $p < 0.001$). Highly similar lures were frequently mistaken for previously seen items, while less similar lures were correctly identified more often. This effect was consistent across all task groups, operating independently of cognitive load.
+The \textbf{Doppelgänger Effect (H3)} revealed that the perceptual similarity is the main driver for memory errors like highly similar lures were frequently mistaken for old items, while less similar lures were correctly identified as lures more often. This effect was consistent across all task groups and was operating independently of cognitive load.
 
-The \textbf{Encoding Update Cost (H4)} provided converging evidence from the encoding phase. Reaction time was highest at the post-boundary position and decreased significantly at pre-boundary and mid-event positions (both $p < .001$), confirming that the cognitive cost of updating the active event model is concentrated at the boundary.
+The \textbf{Encoding Update Cost (H4)}’s analysis provided evidence from the encoding phase. From the analysis we confirmed that the reaction time was highest at the post-boundary position and it decreased significantly at pre-boundary and mid-event positions this confirmed that the cognitive cost of updating the active event model is concentrated at the boundary.
 
-Taken together, all four hypotheses were supported. These findings indicate that memory performance is shaped by three primary mechanisms: (1) a position-specific disruption at event boundaries visible in both encoding RT and retrieval accuracy, (2) a global reduction in performance under higher cognitive load (most pronounced for the Task Only group), and (3) a strong influence of perceptual similarity on discrimination accuracy. Importantly, these mechanisms appear to operate largely independently, highlighting the distinct roles of event segmentation, cognitive demand, and stimulus similarity in structuring memory.
+Finally, our all 4 hypotheses were supported. These findings indicated that the memory performance is shaped by 3 primary mechanisms, first is position specific disruption at event boundaries which is visible in both encoding RT and also during the retrieval accuracy. Second is global reduction in the performance under high cognitive load. This is that there is that there is a strong influence of perceptual similarity on discrimination accuracy. Also more importantly we found out that these mechanisms appear to operate independently, which highlights the distinct roles of event segmentation, cognitive demand ans also the stimulus similarity in structuring the memory.
 
 
 \section*{Author Contributions}\label{author-contributions}
 \addcontentsline{toc}{section}{Author Contributions}
 
-All three authors contributed equally to this project. Each member was responsible for at least one hypothesis, the corresponding statistical implementation in R, and associated written sections.
+All members have contributed equally to the project. Srushti Pekamwar performed LMM analyses (H1, H4). Anurag Kaushal calculated key metrics and performed ANOVA (H2). Param Modi did the literature review and performed GLMM analysis (H3). Everyone contributed to data processing, writing, interpretation, final poster and report preparation.
 
-\begin{itemize}
-
-  \item \textbf{Srushti Pekamwar} — \textit{Hypotheses: H1 (Boundary Disruption Effect) and H4 (Encoding Update Cost).}
-  Responsible for data cleaning, merging of raw task and test files, and construction of trial-level encoding and retrieval datasets. Implemented the LMM and Type III ANOVA for H1 (\texttt{lmer(REC \textasciitilde{} boundary\_position + (1|participant))}) with planned contrasts, and the LMM for H4 (\texttt{lmer(encoding\_RT \textasciitilde{} boundary\_pos + (1|participant))}). Generated the positional REC gradient figure and the encoding RT figure. Drafted the H1 and H4 Results subsections and the Discussion.
-
-  \item \textbf{Anurag Kaushal} — \textit{Hypotheses: H2 (Cognitive Load Effect).}
-  Responsible for participant-level metric computation (REC, LDI) and data validation diagnostics. Implemented the $3 \times 3$ mixed-effects ANOVA (\texttt{lmer(REC \textasciitilde{} boundary\_position * group + (1|participant))}) for H2, including the group main effect, boundary$\times$group interaction test, and interaction plot. Also contributed to the GLMM pipeline setup and random-effects forest plot. Drafted the Methods section and the Data Validation subsection.
-
-  \item \textbf{Param Modi} — \textit{Hypothesis: H3 (Doppelg\"{a}nger Effect).}
-  Responsible for literature review and theoretical framing of Event Segmentation Theory. Implemented the binomial GLMM for H3 (\texttt{glmer(accuracy \textasciitilde{} lure\_bin * group + (1|participant), family = binomial)}) and generated the lure similarity interaction and facet plots. Constructed the hypothesis summary table and ROC/heatmap supplementary figures. Drafted the Introduction, H3 Results subsection, Conclusion, and coordinated the final report compilation and poster preparation.
-
-\end{itemize}
-
-\section*{References and Citations}\label{references-and-citations}
+\section*{References and Github Reporsitory}\label{references-and-citations}
 \addcontentsline{toc}{section}{References and Citations}
 
 Morse, S. J., Karagoz, A. B., \& Reagh, Z. M. (2023). Event boundaries
@@ -483,6 +458,8 @@ General}.
 
 Zacks, J. M., Speer, N. K., Swallow, K. M., et al. (2007). Event
 perception. \emph{Psychological Bulletin}.
+
+\href{https://github.com/Anurag-1205/MST_Simpletons}{MST\_Simpletons GitHub Repository}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
